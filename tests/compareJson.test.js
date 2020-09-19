@@ -50,7 +50,7 @@ describe('StatusCode 200', () => {
         expect(response).toEqual(expected);
     });
 
-    
+
     test('時間を年月日まで無視(NGにさせる)', () => {
         const expected =
         {
@@ -82,7 +82,7 @@ describe('StatusCode 200', () => {
         expect(response).toEqual(expected);
     });
 
-       test('順番は無視（項目数が少ない_NG_にならない！？）', () => {
+    test('順番は無視（項目数が少ない_NG_にならない！？）', () => {
         const expected =
         {
             "hello": "Hello, Tom!",
