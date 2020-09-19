@@ -32,7 +32,7 @@ describe('StatusCode 200', () => {
         expect(response).toEqual(expected);
     });
 
-    test('時間を年月日まで無視', () => {
+    test('時間を年月日まで無視(OKにさせる)', () => {
         const expected =
         {
             "hello": "Hello, Tom!",
@@ -50,7 +50,23 @@ describe('StatusCode 200', () => {
         expect(response).toEqual(expected);
     });
 
-    test('順番は無視', () => {
+    
+    test('時間を年月日まで無視(NGにさせる)', () => {
+        const expected =
+        {
+            "hello": "Hello, Tom!",
+            "animals": [
+                "gorilla",
+                "chin-pan",
+                "human"
+            ],
+            "generate_date": expect.stringMatching("2020091910.*"),
+            "update_date": expect.stringMatching("2020091910.*")
+        };
+        expect(response).not.toEqual(expected);
+    });
+
+    test('順番は無視（項目数は一致）', () => {
         const expected =
         {
             "hello": "Hello, Tom!",
@@ -65,5 +81,22 @@ describe('StatusCode 200', () => {
 
         expect(response).toEqual(expected);
     });
+
+       test('順番は無視（項目数が少ない_NG_にならない！？）', () => {
+        const expected =
+        {
+            "hello": "Hello, Tom!",
+            "animals": expect.arrayContaining([
+                "chin-pan",
+                "gorilla"
+            ]),
+            "generate_date": expect.anything(),
+            "update_date": expect.anything()
+        };
+
+        expect(response).toEqual(expected);
+    });
+
+
 
 })
