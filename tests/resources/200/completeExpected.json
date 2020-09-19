@@ -1,0 +1,10 @@
+{
+    "hello": "Hello, Tom!",
+    "animals": [
+        "gorilla",
+        "chin-pan",
+        "human"
+    ],
+    "generate_date": "2020091910011234",
+    "update_date": "2020092010023456"
+}
