@@ -98,5 +98,36 @@ describe('StatusCode 200', () => {
     });
 
 
+    test('項目数が多い_NG', () => {
+        const expected =
+        {
+            "hello": "Hello, Tom!",
+            "animals": [
+                "gorilla",
+                "chin-pan",
+                "human"
+            ],
+            "generate_date": expect.anything(),
+            "update_date": expect.anything(),
+            "user": "aiueo"
+        };
 
+        expect(response).not.toEqual(expected);
+    });
+
+
+    test('項目数が少ない_NG', () => {
+        const expected =
+        {
+            "animals": [
+                "gorilla",
+                "chin-pan",
+                "human"
+            ],
+            "generate_date": expect.anything(),
+            "update_date": expect.anything()
+        };
+
+        expect(response).not.toEqual(expected);
+    });
 })
