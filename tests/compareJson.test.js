@@ -101,6 +101,8 @@ describe('StatusCode 200', () => {
             "update_date": expect.anything()
         };
 
+        // arrayContainingつかうなら、サイズも見ておいたほうが良さそうだ
+        expect(response.animals.length).toBe(3);
         expect(response).toEqual(expected);
     });
 
