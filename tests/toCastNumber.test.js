@@ -53,4 +53,8 @@ describe.each`
 // ついでにStringも。
 test('toString: -123 -> "-123"', () => {
   expect(String(-123)).toBe("-123");
+  console.log("-123,456,789.12円".replace(/,/g, ""))
+  console.log(parseFloat("-123456789円"))
+  console.log(parseInt("12.3円45,6ドル789円"))
+  console.log(parseFloat("12.3円45,6ドル789円"))
 });
